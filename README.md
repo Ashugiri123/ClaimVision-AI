@@ -35,9 +35,19 @@ The goal is to reduce fraudulent claims while speeding up genuine insurance appr
 
 # 🎥 Project Demo
 
-### ▶ Watch Full Demonstration
+<p align="center">
 
-https://youtu.be/bg8ddYtOxtI
+<a href="https://youtu.be/bg8ddYtOxtI">
+<img src="https://img.youtube.com/vi/bg8ddYtOxtI/maxresdefault.jpg" width="900">
+</a>
+
+<br><br>
+
+<a href="https://youtu.be/bg8ddYtOxtI">
+<img src="https://img.shields.io/badge/▶-Watch%20Demo-red?style=for-the-badge">
+</a>
+
+</p>
 
 ---
 
