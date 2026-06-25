@@ -13,7 +13,11 @@
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini%202.5-4285F4?style=for-the-badge&logo=google&logoColor=white)]()
 [![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)]()
 
-**Built for the Orchestrate Hackathon**
+[![Live Demo](https://img.shields.io/badge/🌐-Live%20Demo-brightgreen?style=for-the-badge)](https://claimvision-ai.streamlit.app/)
+
+[![YouTube Demo](https://img.shields.io/badge/▶-Watch%20Demo-red?style=for-the-badge)](https://youtu.be/bg8ddYtOxtI)
+
+**AI-Powered Insurance Claim Verification Platform**
 
 </div>
 
