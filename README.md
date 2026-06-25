@@ -1,247 +1,206 @@
-<p align="center">
-  <img src="README_assets/logo.png" width="220">
-</p>
+<div align="center">
 
-<h1 align="center">🛡️ ClaimVision AI</h1>
+<img src="code/assets/logo.png" width="220">
 
-<p align="center">
-AI Powered Insurance Claim Verification using Google Gemini Vision
-</p>
+# 🛡️ ClaimVision AI
 
-<p align="center">
+### AI Powered Insurance Claim Verification System
 
-<img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python">
+**Detect Damage • Verify Evidence • Prevent Fraud • Generate Reports**
 
-<img src="https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=google">
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)]()
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini%202.5-4285F4?style=for-the-badge&logo=google&logoColor=white)]()
+[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)]()
 
-<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit">
+**Built for the Orchestrate Hackathon**
 
-<img src="https://img.shields.io/badge/Computer-Vision-blue?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/AI-Powered-success?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/Hackathon-Orchestrate-orange?style=for-the-badge">
-
-</p>
+</div>
 
 ---
 
-# 📖 Overview
+# 📌 Overview
 
-ClaimVision AI is an intelligent insurance claim verification system that leverages **Google Gemini 2.5 Flash Vision** to analyze damage images, understand customer claim descriptions, validate submitted evidence, assess customer claim history, and generate an AI-assisted insurance decision.
+ClaimVision AI is an AI-powered insurance claim verification platform that automates the initial claim assessment process using Google's Gemini Vision model.
 
-Instead of relying solely on manual inspection, ClaimVision AI automates the first level of claim verification, reducing processing time while helping identify suspicious or fraudulent claims.
+Instead of relying solely on manual inspection, the system analyzes uploaded damage images, understands the customer's claim, checks historical claim records, validates evidence requirements, detects possible fraud indicators, and generates a professional PDF report.
+
+The goal is to reduce fraudulent claims while speeding up genuine insurance approvals.
 
 ---
 
 # 🎥 Project Demo
 
-<p align="center">
+### ▶ Watch Full Demonstration
 
-<a href="https://youtu.be/bg8ddYtOxtI">
-
-<img src="https://img.youtube.com/vi/bg8ddYtOxtI/maxresdefault.jpg" width="900">
-
-</a>
-
-</p>
-
-<p align="center">
-Click the image above to watch the complete demonstration.
-</p>
+https://youtu.be/bg8ddYtOxtI
 
 ---
 
 # ✨ Features
 
-- 🚗 Supports Car, Laptop and Package insurance claims
-- 🤖 Google Gemini Vision powered damage analysis
-- 💬 Customer conversation understanding
-- 🛡 Fraud risk assessment
-- 📂 Customer history verification
-- 📑 Evidence validation
-- 📊 AI confidence score
-- 📍 Damaged part identification
-- 📄 Automatic PDF report generation
-- 📥 JSON export
-- 💻 Modern Streamlit dashboard
+✅ AI Damage Detection
+
+✅ Customer Conversation Analysis
+
+✅ Gemini Vision Image Understanding
+
+✅ Insurance Claim Decision Engine
+
+✅ Fraud Risk Assessment
+
+✅ Evidence Verification
+
+✅ Customer History Analysis
+
+✅ Professional PDF Report Generation
+
+✅ Beautiful Streamlit Dashboard
 
 ---
 
-# 🖥 User Interface
+# 🖥 Application Screens
 
 ## Landing Page
 
-<p align="center">
-<img src="README_assets/landing.png" width="1000">
-</p>
-
-A clean dashboard where users upload claim images, select claim type, provide customer conversation, and initiate AI analysis.
+![](code/assets/screenshots/landing.png)
 
 ---
 
-## Upload & Image Preview
+## Upload Claim
 
-<p align="center">
-<img src="README_assets/upload.png" width="1000">
-</p>
-
-Users can instantly preview uploaded images before starting claim verification.
+![](code/assets/screenshots/upload.png)
 
 ---
 
 ## AI Processing
 
-<p align="center">
-<img src="README_assets/processing.png" width="1000">
-</p>
-
-The system displays real-time progress while Gemini analyzes the uploaded image and the decision engine evaluates the claim.
+![](code/assets/screenshots/processing.png)
 
 ---
 
-## Final Decision
+## Claim Decision
 
-<p align="center">
-<img src="README_assets/decision.png" width="1000">
-</p>
-
-ClaimVision AI automatically determines whether the claim should be:
-
-- ✅ Approved
-- ❌ Rejected
-- 🟡 Sent for Manual Review
+![](code/assets/screenshots/decision.png)
 
 ---
 
 ## Analysis Summary
 
-<p align="center">
-<img src="README_assets/summary.png" width="1000">
-</p>
-
-Provides
-
-- Image validation
-- Damage detection
-- Severity assessment
-- Issue type
-- AI confidence
+![](code/assets/screenshots/summary.png)
 
 ---
 
 ## Risk Assessment
 
-<p align="center">
-<img src="README_assets/risk.png" width="1000">
-</p>
-
-Evaluates customer history, evidence completeness, fraud suspicion, damaged part, AI explanation, and recommendation.
+![](code/assets/screenshots/risk.png)
 
 ---
 
-## Generated PDF Report
+## PDF Report
 
-<p align="center">
-<img src="README_assets/pdf_report.png" width="650">
-</p>
-
-Generates a professional insurance claim report including:
-
-- Customer information
-- Uploaded evidence
-- AI decision
-- Damage analysis
-- Confidence
-- Final recommendation
+![](code/assets/screenshots/pdf_report.png)
 
 ---
 
-# ⚙ AI Workflow
+# ⚙ Workflow
 
-```text
+```
 Customer
       │
       ▼
-Upload Damage Image
+Upload Image
       │
       ▼
 Gemini Vision Analysis
       │
       ▼
-Damage Detection
-      │
-      ▼
 Conversation Analysis
       │
       ▼
-Evidence Validation
+Evidence Verification
       │
       ▼
-Customer History Analysis
+History Check
       │
       ▼
 Decision Engine
       │
       ▼
-Approve / Reject / Manual Review
+Claim Approval / Rejection
       │
       ▼
-Generate PDF Report
+PDF Report
 ```
 
 ---
 
-# 🛠 Tech Stack
+# 🧠 Technologies Used
 
 | Technology | Purpose |
 |------------|----------|
 | Python | Backend |
-| Streamlit | User Interface |
-| Google Gemini 2.5 Flash | Vision AI |
-| Pandas | Dataset Processing |
-| Pillow | Image Handling |
+| Streamlit | Web Application |
+| Google Gemini 2.5 Flash | Image Understanding |
+| Pillow | Image Processing |
+| Pandas | Dataset Handling |
+| CSV | Claim Records |
 | ReportLab | PDF Generation |
-| dotenv | API Configuration |
-| CSV | Local Data Storage |
+| dotenv | API Management |
 
 ---
 
 # 📂 Project Structure
 
-```text
+```
 ClaimVision-AI
-
+│
 ├── code
+│   ├── assets
+│   │   ├── logo.png
+│   │   ├── style.css
+│   │   └── screenshots
 │   ├── image_analyzer.py
-│   ├── decision_engine.py
-│   ├── history_checker.py
 │   ├── evidence_checker.py
+│   ├── history_checker.py
+│   ├── decision_engine.py
 │   ├── streamlit_app.py
 │   └── reports
 │
 ├── dataset
 │
-├── README_assets
+├── docs
 │
 ├── requirements.txt
 │
-└── README.md
+├── README.md
+│
+└── LICENSE
 ```
 
 ---
 
 # 🚀 Installation
 
+Clone the repository
+
 ```bash
 git clone https://github.com/Ashugiri123/ClaimVision-AI.git
-
-cd ClaimVision-AI
-
-python -m venv .venv
-
-source .venv/bin/activate
 ```
+
+Go inside project
+
+```bash
+cd ClaimVision-AI
+```
+
+Create virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate
 
 Windows
 
@@ -255,15 +214,9 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Create
+Create a `.env`
 
 ```
-.env
-```
-
-Add
-
-```text
 GEMINI_API_KEY=YOUR_API_KEY
 ```
 
@@ -275,34 +228,59 @@ streamlit run code/streamlit_app.py
 
 ---
 
-# 📈 Example Output
+# 📊 AI Decision Parameters
 
-```
-Claim Status : Approved
+The system evaluates claims using:
 
-Severity : High
+- Visible Damage Detection
+- Damage Severity
+- Claimed Object Validation
+- Customer Conversation
+- Historical Claims
+- Fraud Indicators
+- Evidence Rules
+- Missing Documents
+- AI Confidence Score
 
-Issue : Broken Part
+---
 
-Fraud Risk : Low
+# 📄 Generated Report
 
-Confidence : 97%
+The application automatically generates a professional insurance assessment report containing
 
-Damaged Part : Front Bumper
-```
+- Customer Details
+
+- Uploaded Damage Image
+
+- Claim Status
+
+- Damage Severity
+
+- Risk Analysis
+
+- AI Explanation
+
+- Recommendation
 
 ---
 
 # 🔮 Future Improvements
 
-- Multi-image damage mapping
-- Repair cost estimation
-- OCR document verification
-- VIN verification
-- Insurance API integration
-- Cloud deployment
-- Mobile application
-- Video claim analysis
+- Multi Image Verification
+
+- OCR for Vehicle Documents
+
+- Insurance API Integration
+
+- GPS Metadata Validation
+
+- VIN Number Verification
+
+- Object Detection Model
+
+- Admin Dashboard
+
+- Real-time Claim Tracking
 
 ---
 
@@ -318,12 +296,12 @@ Google Student Ambassador
 
 # 📜 License
 
-This project was developed for the **Orchestrate Hackathon**.
+This project is licensed under the MIT License.
 
 ---
 
-<h3 align="center">
+<div align="center">
 
-⭐ If you found this project useful, please consider giving it a Star ⭐
+### ⭐ If you like this project, don't forget to Star the repository ⭐
 
-</h3>
+</div>
