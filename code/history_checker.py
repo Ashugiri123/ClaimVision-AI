@@ -8,5 +8,7 @@ class HistoryChecker:
         self.history = loader.load_user_history()
 
     def get_user_history(self, user_id):
-        rows = self.history[self.history["user_id"] == user_id]
+        rows = self.history[
+            self.history["user_id"].astype(str) == str(user_id)
+        ]
         return rows

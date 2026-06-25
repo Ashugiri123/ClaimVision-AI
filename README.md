@@ -1,161 +1,228 @@
-# HackerRank Orchestrate
+# 🛡️ ClaimVision AI
 
-Starter repository for the **HackerRank Orchestrate** 24-hour hackathon.
+> An AI-powered multimodal insurance claim verification system that analyzes customer conversations and submitted damage images to automatically determine claim validity.
 
-Build a system that verifies visual evidence for damage claims across three object types: **cars**, **laptops**, and **packages**.
-
-Your system will receive claim conversations, one or more submitted images, user claim history, and minimum evidence requirements. It must decide whether the submitted images support the claim, contradict it, or do not provide enough information.
-
-Read [`problem_statement.md`](./problem_statement.md) for the full task spec, input/output schema, and allowed values.
-
----
-
-## Contents
-
-1. [Repository layout](#repository-layout)
-2. [What you need to build](#what-you-need-to-build)
-3. [Where your code goes](#where-your-code-goes)
-4. [Quickstart](#quickstart)
-5. [Evaluation](#evaluation)
-6. [Chat transcript logging](#chat-transcript-logging)
-7. [Submission](#submission)
-8. [Judge interview](#judge-interview)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)
+![AI](https://img.shields.io/badge/AI-Multimodal-success)
+![Status](https://img.shields.io/badge/Status-Active-green)
 
 ---
 
-## Repository layout
+# 📌 Overview
 
-```text
-.
-├── AGENTS.md                         # Rules for AI coding tools + transcript logging
-├── problem_statement.md              # Full task description and I/O schema
-├── README.md                         # You are here
-├── code/                             # Build your solution here
-│   ├── main.py                       # Suggested terminal entry point
-│   └── evaluation/
-│       └── main.py                   # Suggested evaluation entry point
-└── dataset/
-    ├── sample_claims.csv             # Inputs + expected outputs for development
-    ├── claims.csv                    # Inputs only; run your system on these rows
-    ├── user_history.csv              # Historical claim counts and risk context
-    ├── evidence_requirements.csv     # Minimum image evidence requirements
-    └── images/
-        ├── sample/                   # Images referenced by sample_claims.csv
-        └── test/                     # Images referenced by claims.csv
+ClaimVision AI is an intelligent insurance claim verification system designed to automate the first stage of claim inspection.
+
+Instead of manually reviewing customer conversations and uploaded evidence images, the system combines computer vision, natural language understanding, and rule-based decision making to evaluate whether a claim is supported by sufficient visual evidence.
+
+The project was developed for the HackerRank Orchestrate Hackathon and demonstrates how Large Vision Language Models can be integrated into real-world insurance workflows.
+
+---
+
+# 🚀 Features
+
+- 📷 AI-powered image damage analysis
+- 💬 Customer conversation parsing
+- 🚗 Supports Cars, Laptops and Packages
+- 📑 Automatic evidence verification
+- ⚠️ User history based risk analysis
+- 🤖 Rule-based decision engine
+- 📊 Automatic CSV report generation
+- 🧩 Modular architecture
+- 🔒 Environment variable based API security
+
+---
+
+# ❗ Problem Statement
+
+Insurance companies receive thousands of claims every day.
+
+Manual verification is:
+
+- Time consuming
+- Expensive
+- Error prone
+- Difficult to scale
+
+ClaimVision AI automates the initial verification process by analyzing:
+
+- Customer conversations
+- Uploaded damage images
+- User claim history
+- Evidence requirements
+
+The system determines:
+
+- Whether submitted evidence is sufficient
+- Damage type
+- Damaged object part
+- Damage severity
+- Whether the claim is supported or contradicted
+
+---
+
+# 🏗️ System Architecture
+
+```
+                Customer Claim
+                       │
+                       ▼
+             Claim Conversation
+                       │
+                       ▼
+               Claim Parser
+                       │
+                       ▼
+            Gemini Vision Analyzer
+                       │
+                       ▼
+            Evidence Verification
+                       │
+                       ▼
+           User History Analysis
+                       │
+                       ▼
+             Decision Engine
+                       │
+                       ▼
+                output.csv
 ```
 
 ---
 
-## What you need to build
+# 📂 Project Structure
 
-A system that, for each row in `dataset/claims.csv`, produces one row in `output.csv`.
-
-Input fields:
-
-| Column | Meaning |
-|---|---|
-| `user_id` | User submitting the claim; use this to look up `dataset/user_history.csv` |
-| `image_paths` | One or more submitted image paths, separated by semicolons |
-| `user_claim` | Chat transcript describing the issue |
-| `claim_object` | `car`, `laptop`, or `package` |
-
-Required output fields:
-
-| Column | Meaning |
-|---|---|
-| `evidence_standard_met` | Whether the image set is sufficient to evaluate the claim |
-| `evidence_standard_met_reason` | Short reason for the evidence decision |
-| `risk_flags` | Semicolon-separated risk flags, or `none` |
-| `issue_type` | Visible issue type |
-| `object_part` | Relevant object part |
-| `claim_status` | `supported`, `contradicted`, or `not_enough_information` |
-| `claim_status_justification` | Concise explanation grounded in the image evidence |
-| `supporting_image_ids` | Image IDs supporting the decision, or `none` |
-| `valid_image` | Whether the image set is usable for automated review |
-| `severity` | `none`, `low`, `medium`, `high`, or `unknown` |
-
-Hard requirements:
-
-- Must read the provided CSV files and local images.
-- Must produce `output.csv` with the exact schema in `problem_statement.md`.
-- Must include an evaluation workflow
-- Must avoid hardcoded test labels or file-specific answers.
-
-Beyond that you are free to bring your own approach: VLMs, LLMs, structured prompting, rule layers, batching, caching, evaluation pipelines, model comparison, or anything else.
+```
+ClaimVision-AI/
+│
+├── code/
+│   ├── main.py
+│   ├── claim_parser.py
+│   ├── image_analyzer.py
+│   ├── decision_engine.py
+│   ├── history_checker.py
+│   ├── evidence_checker.py
+│   ├── data_loader.py
+│   ├── output_writer.py
+│   ├── prompts.py
+│   └── config.py
+│
+├── dataset/
+│
+├── docs/
+│
+├── screenshots/
+│
+├── tests/
+│
+├── requirements.txt
+│
+├── .env
+│
+└── README.md
+```
 
 ---
 
-## Where your code goes
+# ⚙️ Technologies Used
 
-All of your work belongs in [`code/`](./code/). The repo ships with empty starter files that you can grow into your full solution.
-
-Suggested conventions:
-
-- Put your main runnable solution in `code/main.py`, or document your own entry point clearly.
-- Put evaluation code under `code/evaluation/` or an `evaluation/` folder included in your final `code.zip`.
-- Write final predictions to `output.csv`.
+- Python
+- Google Gemini 2.5 Flash
+- Google GenAI SDK
+- Pandas
+- Pillow
+- python-dotenv
+- Prompt Engineering
 
 ---
 
-## Quickstart
+# 🔄 Workflow
 
-Clone this repository:
+1. Read insurance claims from CSV.
+2. Parse customer conversation.
+3. Analyze uploaded damage images using Gemini Vision.
+4. Validate submitted evidence.
+5. Analyze previous user claim history.
+6. Apply rule-based decision logic.
+7. Generate structured insurance decision.
+8. Export results to `output.csv`.
+
+---
+
+# 📄 Output
+
+For every submitted claim, the system predicts:
+
+- Evidence Standard
+- Evidence Reason
+- Risk Flags
+- Issue Type
+- Damaged Object Part
+- Claim Status
+- Justification
+- Supporting Image IDs
+- Image Validity
+- Damage Severity
+
+---
+
+# 🛠 Installation
+
+Clone the repository
 
 ```bash
-git clone git@github.com:interviewstreet/hackerrank-orchestrate-june26.git
-cd hackerrank-orchestrate-june26
+git clone https://github.com/yourusername/ClaimVision-AI.git
 ```
 
-You are free to use any language or runtime. Python, JavaScript, and TypeScript are all reasonable choices.
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file
+
+```env
+GEMINI_API_KEY=YOUR_API_KEY
+```
+
+Run
+
+```bash
+python code/main.py
+```
 
 ---
 
-## Evaluation
+# 📈 Future Improvements
 
-The evaluation report should include:
-
-- metrics on `dataset/sample_claims.csv`
-- at least two strategies, prompts, or model configurations compared
-- the final strategy used for `output.csv`
-- operational analysis covering model calls, token usage, image usage, approximate cost, runtime, and TPM/RPM considerations
-
----
-
-## Chat transcript logging
-
-This repo ships with an `AGENTS.md` that modern AI coding tools may read. It instructs the tool to append conversation turns to a shared log file:
-
-| Platform | Path |
-|---|---|
-| macOS / Linux | `$HOME/hackerrank_orchestrate/log.txt` |
-| Windows | `%USERPROFILE%\hackerrank_orchestrate\log.txt` |
-
-You will upload this log as your chat transcript at submission time. The chat transcript means your conversation with the AI coding tool you used to build the system. It is not the runtime logs, reasoning trace, or conversation history produced by the claim-verification agent you are building.
-
-If you use multiple AI tools, include the relevant conversation logs from all of them in the same transcript file. Separate each tool's section with a clear divider and label it with the tool name.
-
-Never paste secrets into the chat. If secrets are needed, use environment variables.
+- Local AI inference using Ollama
+- Support multiple Vision Models
+- Confidence score for predictions
+- Multi-image reasoning
+- Fraud detection module
+- Streamlit web interface
+- Docker support
+- Cloud deployment
 
 ---
 
-## Submission
+# 📸 Screenshots
 
-Submit the following files as instructed by HackerRank:
-
-1. **Code zip**: zip your runnable solution, README, prompts/configs, and evaluation folder. Exclude virtualenvs, `node_modules`, build artifacts, and unnecessary generated files.
-2. **Predictions CSV**: your final `output.csv` for all rows in `dataset/claims.csv`.
-3. **Chat transcript**: the `log.txt` from the path in [Chat transcript logging](#chat-transcript-logging).
-
-Before submitting, confirm:
-
-- `output.csv` has one row per row in `dataset/claims.csv`.
-- `output.csv` has the exact required columns in the exact required order.
-- Your evaluation files are included in `code.zip`.
+Screenshots will be added after deployment.
 
 ---
 
-## Judge interview
+# 👨‍💻 Author
 
-After submission, the AI Judge may ask about your approach, implementation decisions, model usage, evaluation strategy, and how you used AI while building the solution.
+**Ashutosh Giri**
 
-Be prepared to explain your solution in detail.
+Computer Science Engineering Student
+
+Interested in Artificial Intelligence, Machine Learning, Java and Python.
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.

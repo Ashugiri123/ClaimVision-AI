@@ -64,15 +64,24 @@ def main():
            
         
 
-        requirements = evidence_checker.get_requirements(claim_object)
 
         history = history_checker.get_user_history(
             row["user_id"]
         )
 
+        history = history_checker.get_user_history(
+            row["user_id"]
+        )
+
+        evidence = evidence_checker.check_evidence(
+            claim_object,
+            uploaded_images=len(image_paths)
+        )
+
         decision = decision_engine.decide(
             gemini,
-            history
+            history,
+            evidence
         )
 
         output_rows.append({
