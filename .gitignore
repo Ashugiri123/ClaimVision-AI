@@ -5,53 +5,56 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual Environment
+# ==========================
+# Virtual Environments
+# ==========================
 .venv/
 venv/
 env/
 
+# ==========================
 # Environment Variables
+# ==========================
 .env
 
-# VS Code
+# ==========================
+# IDE
+# ==========================
 .vscode/
-
-# PyCharm / IntelliJ
 .idea/
 
-# Python cache
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Output Files
+# ==========================
+outputs/
+*.pdf
+
+# ==========================
+# Python Cache
+# ==========================
 .pytest_cache/
 .mypy_cache/
-
-# Jupyter
 .ipynb_checkpoints/
 
+# ==========================
+# Streamlit
+# ==========================
+.streamlit/
+
+# ==========================
 # OS Files
+# ==========================
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-
-# Generated reports
-code/evaluation/
-*.md
-
-# Model / cache files
-.cache/
-
-# Secrets
-*.pem
-*.key
-*.crt
-
-# Python packaging
-build/
+# ==========================
+# Build
+# ==========================
 dist/
-*.egg-info/
-
-# Local configuration
-.env.*
+build/
